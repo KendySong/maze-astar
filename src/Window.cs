@@ -25,13 +25,12 @@ namespace maze_astar
             _window = new RenderWindow(new VideoMode(width, height), title);
             _window.Closed += Close;    
 
-            //Init
-            //View view = new View(new Vector2f(width / 2, height / 2), new Vector2f(width * 2, height * 2));
-            Maze maze = new Maze(Settings.GetInstance().MazeWidth, Settings.GetInstance().MazeHeight);
-            for (int y = 0; y <  Settings.GetInstance().MazeHeight; y++)           
-                for (int x = 0; x <  Settings.GetInstance().MazeWidth; x++)               
-                    _drawableItems.Add(maze.Labyrinth[y, x].Shape);
-            _window.SetTitle($"{title} Press space to start");
+            //Init maze
+            Random random = new Random();
+            Maze maze = new Maze(Settings.GetInstance().MazeWidth, Settings.GetInstance().MazeHeight, random.Next(0, int.MaxValue));
+                    for (int y = 0; y <  Settings.GetInstance().MazeHeight; y++)
+                        for (int x = 0; x <  Settings.GetInstance().MazeWidth; x++)  
+                            _drawableItems.Add(maze.Labyrinth[y, x].Shape);
 
             //Main loop
             while (_window.IsOpen)
@@ -39,8 +38,7 @@ namespace maze_astar
                 _window.DispatchEvents();
 
                 //Render
-                //_window.SetView(view);
-                _window.Clear(new Color(34, 34, 34));
+                _window.Clear();
                 for (int i = 0; i < _drawableItems.Count(); i++) 
                     _window.Draw(_drawableItems[i]);
                 _window.Display();

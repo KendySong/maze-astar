@@ -22,9 +22,9 @@ namespace maze_astar
             WindowWidth = 1282;
             WindowHeight = 722;
 
-            //Maze size
-            MazeWidth = 21;
-            MazeHeight = 11;          
+            //Maze size => Impair number
+            MazeWidth = 91;
+            MazeHeight = 47;
         }
 
         public static Settings GetInstance()
