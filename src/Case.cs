@@ -14,6 +14,7 @@ namespace maze_astar
         public State Type { get; set; }
         public RectangleShape Shape { get; set; }
         public int Index { get; set; }
+        public double DistTarget { get; set; }
 
         public Case(RectangleShape shape, Vector2i position, State type)
         {
@@ -21,6 +22,7 @@ namespace maze_astar
             Position = position;
             Type = type;
             Index = 0;
+            DistTarget = 0;
         }
 
         public void SetWall()

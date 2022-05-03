@@ -2,6 +2,8 @@
 ///Date : 01.05.2022
 ///Summary : Generate the maze data
 
+using System;
+using System.Collections.Generic;
 using SFML.System;
 using SFML.Graphics;
 

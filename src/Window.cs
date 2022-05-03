@@ -2,9 +2,11 @@
 ///Date : 01.05.2022
 ///Summary : Manage window interaction and program running
 
+using System;
 using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
+using System.Collections.Generic;
 
 namespace maze_astar
 {
@@ -32,6 +34,11 @@ namespace maze_astar
                         for (int x = 0; x <  Settings.GetInstance().MazeWidth; x++)  
                             _drawableItems.Add(maze.Labyrinth[y, x].Shape);
 
+            //Find path
+            List<Case> path = PathFinding.FindPath(maze.Labyrinth, maze.Labyrinth[1, 1],  maze.Labyrinth[Settings.GetInstance().MazeHeight - 2, Settings.GetInstance().MazeWidth- 1]);
+            for (int i = 0; i < path.Count; i++)           
+                path[i].Shape.FillColor = Color.Green;
+
             //Main loop
             while (_window.IsOpen)
             {
@@ -39,7 +46,7 @@ namespace maze_astar
 
                 //Render
                 _window.Clear();
-                for (int i = 0; i < _drawableItems.Count(); i++) 
+                for (int i = 0; i < _drawableItems.Count; i++) 
                     _window.Draw(_drawableItems[i]);
                 _window.Display();
             }        
