@@ -2,3 +2,6 @@
 Maze generation with custom A* pathfinding algorithm, the program calculate only F value for each case
 ---
 <img src="https://github.com/kendysg/maze-astar/blob/main/image/program.png"></img>
+
+## How to take the project
+- Install .Net 6 <a src="https://dotnet.microsoft.com/en-us/download/dotnet/6.0"> here </a>
