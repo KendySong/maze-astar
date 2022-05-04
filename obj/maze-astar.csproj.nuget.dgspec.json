@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kndys\\Desktop\\maze-astar\\maze-astar.csproj": {}
+    "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\maze-astar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kndys\\Desktop\\maze-astar\\maze-astar.csproj": {
+    "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\maze-astar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kndys\\Desktop\\maze-astar\\maze-astar.csproj",
+        "projectUniqueName": "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\maze-astar.csproj",
         "projectName": "maze-astar",
-        "projectPath": "C:\\Users\\kndys\\Desktop\\maze-astar\\maze-astar.csproj",
+        "projectPath": "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\maze-astar.csproj",
         "packagesPath": "C:\\Users\\kndys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kndys\\Desktop\\maze-astar\\obj\\",
+        "outputPath": "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

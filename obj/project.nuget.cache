@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n5lW9D0MJMusQLZkQpLmp5SAuGCh1f/NiJKhBFURIdOlvZu6/KPT450aLspDM8Fn2Z3AMZD2fRntCWgKdHKanw==",
+  "dgSpecHash": "OdAds+p+VzygxhpUSZfYYBUxBZD2FjY+7eIbAo9QK5tevHmNMxurBhNbyd2hULdyHGv/F7yyLNvhsjVVd/nYWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kndys\\Desktop\\maze-astar\\maze-astar.csproj",
+  "projectFilePath": "C:\\Users\\kndys\\Desktop\\master\\maze-astar\\maze-astar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kndys\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
     "C:\\Users\\kndys\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

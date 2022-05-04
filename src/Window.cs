@@ -6,6 +6,7 @@ using System;
 using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace maze_astar
@@ -34,11 +35,15 @@ namespace maze_astar
                         for (int x = 0; x <  Settings.GetInstance().MazeWidth; x++)  
                             _drawableItems.Add(maze.Labyrinth[y, x].Shape);
 
-            //Find path
-            List<Case> path = PathFinding.FindPath(maze.Labyrinth, maze.Labyrinth[1, 1],  maze.Labyrinth[Settings.GetInstance().MazeHeight - 2, Settings.GetInstance().MazeWidth- 1]);
-            for (int i = 0; i < path.Count; i++)           
-                path[i].Shape.FillColor = Color.Green;
+            //Set start and end color
+            maze.Labyrinth[1, 0].Shape.FillColor = Color.Blue;
+            maze.Labyrinth[Settings.GetInstance().MazeHeight - 2, Settings.GetInstance().MazeWidth - 1].Shape.FillColor = Color.Red;
 
+            //Find path
+            List<Case> path = PathFinding.FindPath(maze.Labyrinth, maze.Labyrinth[1, 1],  maze.Labyrinth[Settings.GetInstance().MazeHeight - 2, Settings.GetInstance().MazeWidth - 2]);
+            for (int i = 0; i < path.Count; i++)                       
+                path[i].Shape.FillColor = Color.Green;
+             
             //Main loop
             while (_window.IsOpen)
             {
