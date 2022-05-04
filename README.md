@@ -2,7 +2,7 @@
 Maze generation with custom A* pathfinding algorithm, the program calculate only F value for each case.
 
 ---
-For use the program just run the .exe.
+
 <img src="https://github.com/kendysg/maze-astar/blob/main/image/program.png"></img>
 
 ## How to take the project
@@ -12,3 +12,4 @@ For use the program just run the .exe.
 - Git clone https://github.com/kendysg/maze-astar.git
 - cd maze-astar
 - code .
+- For use the program just run the .exe or press f5 to use Vscode debugger
