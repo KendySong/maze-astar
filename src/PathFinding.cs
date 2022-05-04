@@ -2,19 +2,24 @@
 ///Date : 03.05.2022
 ///Summary : Note case distance and find a path A => B
 
+using System;
 using System.Collections.Generic;
 
 namespace maze_astar
 {
     static class PathFinding
     {
+        static List<Case> path = new List<Case>();
+        static List<Case> openedCase = new List<Case>();
+
         public static List<Case> FindPath(Case[,] map, Case start, Case target)
         {
-            Case currentCase = start;
-            List<Case> path = new List<Case>();
+            bool pathFind = false;
+            Case currentCase = start;     
             List<Case> neighbor = new List<Case>();
-
+            
             //Note case far from the target
+            path.Add(currentCase);
             for (int y = 1; y < map.GetLength(0) - 1; y++)
             {
                 for (int x = 1; x < map.GetLength(1) - 1; x++)
@@ -28,21 +33,38 @@ namespace maze_astar
                 }
             }
 
-            //Problem is on the neighbor and revisted more than 1 time case
-            for(int a = 0; a < 50; a++)
+            //Search path
+            while (!pathFind)
             {
                 //Get neighbor of current case
                 neighbor = GetNeighbor(map, currentCase);
                 
-                currentCase = neighbor[0];
-                for (int i = 1; i < neighbor.Count; i++)
-                {
-                    if (currentCase.DistTarget > neighbor[i].DistTarget)
-                    {
-                        currentCase = neighbor[i];
-                    }
+                //Blocked
+                if (neighbor.Count == 0)
+                {                   
+                    //Get the nearest opened case
+                    currentCase = openedCase[0];
+                    for (int i = 0; i < openedCase.Count; i++)                  
+                        if (currentCase.DistTarget > openedCase[i].DistTarget && !path.Contains(openedCase[i]))                      
+                            currentCase = openedCase[i];                          
                 }
-                path.Add(currentCase);
+                //Choice of path or 1 choice
+                else
+                {                    
+                    //Get nearest neighbor
+                    currentCase = neighbor[0];
+                    for (int i = 1; i < neighbor.Count; i++)                    
+                        if (currentCase.DistTarget > neighbor[i].DistTarget)                        
+                            currentCase = neighbor[i];       
+                    
+                    openedCase.Remove(currentCase);
+                }   
+          
+                path.Add(currentCase);    
+
+                //Check if the path is found
+                if (currentCase == target)               
+                    pathFind = true;                  
             }
             
             return path;
@@ -52,24 +74,29 @@ namespace maze_astar
         {
             List<Case> neighbor = new List<Case>();
 
-            if(currentCase.Position.Y - 1 > 0 && map[currentCase.Position.Y - 1, currentCase.Position.X].Type == State.Empty)
+            //Add 4 directions neighbor if it's possible
+            if(currentCase.Position.Y - 1 > 0 && map[currentCase.Position.Y - 1, currentCase.Position.X].Type == State.Empty && !path.Contains(map[currentCase.Position.Y - 1, currentCase.Position.X]))
             {                    
                 neighbor.Add(map[currentCase.Position.Y - 1, currentCase.Position.X]);
+                openedCase.Add(map[currentCase.Position.Y - 1, currentCase.Position.X]);
             }
 
-            if(currentCase.Position.Y + 1 < map.GetLength(0) - 1 && map[currentCase.Position.Y + 1, currentCase.Position.X].Type == State.Empty)
+            if(currentCase.Position.Y + 1 < map.GetLength(0) - 1 && map[currentCase.Position.Y + 1, currentCase.Position.X].Type == State.Empty && !path.Contains(map[currentCase.Position.Y + 1, currentCase.Position.X]))
             {
                 neighbor.Add(map[currentCase.Position.Y + 1, currentCase.Position.X]);
+                openedCase.Add(map[currentCase.Position.Y + 1, currentCase.Position.X]);
             }
 
-            if(currentCase.Position.X - 1 > 0 && map[currentCase.Position.Y, currentCase.Position.X - 1].Type == State.Empty)
+            if(currentCase.Position.X - 1 > 0 && map[currentCase.Position.Y, currentCase.Position.X - 1].Type == State.Empty && !path.Contains(map[currentCase.Position.Y, currentCase.Position.X - 1]))
             {
                 neighbor.Add(map[currentCase.Position.Y, currentCase.Position.X - 1]);
+                openedCase.Add(map[currentCase.Position.Y, currentCase.Position.X - 1]);
             }
 
-            if(currentCase.Position.X + 1 < map.GetLength(1) - 1 && map[currentCase.Position.Y, currentCase.Position.X + 1].Type == State.Empty)
+            if(currentCase.Position.X + 1 < map.GetLength(1) - 1 && map[currentCase.Position.Y, currentCase.Position.X + 1].Type == State.Empty && !path.Contains(map[currentCase.Position.Y, currentCase.Position.X + 1]))
             {
                 neighbor.Add(map[currentCase.Position.Y, currentCase.Position.X + 1]);
+                openedCase.Add(map[currentCase.Position.Y, currentCase.Position.X + 1]);
             }
 
             return neighbor;

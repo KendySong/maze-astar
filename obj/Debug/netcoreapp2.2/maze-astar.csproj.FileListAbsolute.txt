@@ -1,0 +1,11 @@
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.csprojAssemblyReference.cache
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.csproj.CoreCompileInputs.cache
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.AssemblyInfoInputs.cache
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.AssemblyInfo.cs
+C:\Users\pl70jwz\Desktop\maze-astar\bin\Debug\netcoreapp2.2\maze-astar.deps.json
+C:\Users\pl70jwz\Desktop\maze-astar\bin\Debug\netcoreapp2.2\maze-astar.runtimeconfig.json
+C:\Users\pl70jwz\Desktop\maze-astar\bin\Debug\netcoreapp2.2\maze-astar.runtimeconfig.dev.json
+C:\Users\pl70jwz\Desktop\maze-astar\bin\Debug\netcoreapp2.2\maze-astar.dll
+C:\Users\pl70jwz\Desktop\maze-astar\bin\Debug\netcoreapp2.2\maze-astar.pdb
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.dll
+C:\Users\pl70jwz\Desktop\maze-astar\obj\Debug\netcoreapp2.2\maze-astar.pdb
