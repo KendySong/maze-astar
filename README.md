@@ -4,4 +4,9 @@ Maze generation with custom A* pathfinding algorithm, the program calculate only
 <img src="https://github.com/kendysg/maze-astar/blob/main/image/program.png"></img>
 
 ## How to take the project
+- Install visual studio code
+- Install C# extension
 - Install .Net 6 => https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+- Git clone https://github.com/kendysg/maze-astar.git
+- cd maze-astar
+- code .
